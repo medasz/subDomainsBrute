@@ -1,7 +1,5 @@
 package lib
 
-
-func Parse_args(){
-
+func Parse_args() {
+	println("asd")
 }
-
