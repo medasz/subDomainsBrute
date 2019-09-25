@@ -1,12 +1,23 @@
 package main
 
 import (
-	"./lib"
+	"os"
+
+	"github.com/urfave/cli"
 )
 
 func main() {
-	lib.Parse_args()
-
+	//lib.Parse_args()
+	app := cli.NewApp()
+	app.Name = "subDomainsBrute"
+	app.Usage = "域名信息探测和枚举"
+	app.UsageText = "subDomainsBrute [options] target.com"
+	app.Version = "1.0.0"
+	app.Action = func(c *cli.Context) error {
+		println("hello")
+		return nil
+	}
+	_ = app.Run(os.Args)
 	//config,err:=dns.ClientConfigFromFile("./dns_server.txt")
 	//if err!=nil{
 	//	log.Fatal(err)
