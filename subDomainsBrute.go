@@ -3,6 +3,7 @@ package main
 import (
 	"./lib"
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -12,7 +13,11 @@ func init() {
 func main() {
 	println("SubDomainsBrute v1.2")
 	println("https://github.com/lijiejie/subDomainsBrute")
-	tmp_dir := fmt.Sprintf("tmp/%s_%s", lib.Target, time.Now())
+	tmp_dir := fmt.Sprintf("tmp/%s_%s", lib.Target, time.Now().Format("2006-01-02 15:04:05"))
+	fileInfo,err:=os.Stat(tmp_dir)
+	if err!=nil{
+
+	}
 	//config,err:=dns.ClientConfigFromFile("./dns_server.txt")
 	//if err!=nil{
 	//	log.Fatal(err)
