@@ -1,21 +1,18 @@
 package main
 
 import (
-	"os"
+	"./lib"
+	"fmt"
+	"time"
 )
 
+func init() {
+	lib.Parse_args()
+}
 func main() {
-	//lib.Parse_args()
-	app := cli.NewApp()
-	app.Name = "subDomainsBrute"
-	app.Usage = "域名信息探测和枚举"
-	app.UsageText = "subDomainsBrute [options] target.com"
-	app.Version = "1.0.0"
-	app.Action = func(c *cli.Context) error {
-		println("hello")
-		return nil
-	}
-	_ = app.Run(os.Args)
+	println("SubDomainsBrute v1.2")
+	println("https://github.com/lijiejie/subDomainsBrute")
+	tmp_dir := fmt.Sprintf("tmp/%s_%s", lib.Target, time.Now())
 	//config,err:=dns.ClientConfigFromFile("./dns_server.txt")
 	//if err!=nil{
 	//	log.Fatal(err)
